@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Melasma Sunscreen Guide</title>
+<meta name="description" content="Why sunscreen color matters for melasma: tinted SPF picks with iron oxides, how to read the label, and a gentle routine.">
+<meta property="og:title" content="Melasma Sunscreen Guide">
+<meta property="og:description" content="Why sunscreen color matters for melasma: tinted SPF picks with iron oxides, how to read the label, and a gentle routine.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  /* iOS inset-grouped layout: large title, segmented control for the 3 parts, grouped lists. */
+  :root {
+    --bg: #f2f2f7;
+    --cell: #ffffff;
+    --label: #000000;
+    --label2: rgba(60, 60, 67, 0.6);
+    --label3: rgba(60, 60, 67, 0.3);
+    --sep: rgba(60, 60, 67, 0.29);
+    --fill: rgba(120, 120, 128, 0.12);
+    --press: #e5e5ea;
+    --tint: #007aff;
+    --tint-fill: rgba(0, 122, 255, 0.12);
+    --red: #ff3b30;
+    --bar: rgba(242, 242, 247, 0.8);
+    --thumb: #ffffff;
+    --tan-1: #f3dccb;
+    --tan-2: #e6b496; --tan-3: #c98f6b;
+    --sage: #cfdcc2;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #000000; --cell: #1c1c1e; --label: #ffffff; --label2: rgba(235, 235, 245, 0.6);
+      --label3: rgba(235, 235, 245, 0.3); --sep: rgba(84, 84, 88, 0.65); --fill: rgba(118, 118, 128, 0.24);
+      --press: #2c2c2e; --tint: #0a84ff; --tint-fill: rgba(10, 132, 255, 0.18); --red: #ff453a;
+      --bar: rgba(22, 22, 24, 0.78); --thumb: #636366; --tan-1: #e9cdb9; --tan-2: #d9a688; --tan-3: #b97f5c;
+      --sage: #a9bb98; color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--label); font-family: var(--font); font-size: 17px; line-height: 1.35; letter-spacing: -0.01em; }
+  a { color: var(--tint); text-decoration: none; }
+  p { margin: 0; }
+  :focus-visible { outline: 3px solid var(--tint); outline-offset: 2px; border-radius: 8px; }
+
+  /* nav bar: small title fades in once the large title scrolls away */
+  .navbar {
+    position: sticky; top: 0; z-index: 20;
+    padding: calc(env(safe-area-inset-top, 0px) + 10px) max(16px, env(safe-area-inset-right, 0px)) 10px max(16px, env(safe-area-inset-left, 0px));
+    text-align: center; font-weight: 600; font-size: 17px;
+    background: transparent; border-bottom: 0.5px solid transparent;
+    transition: background-color .2s, border-color .2s;
+  }
+  .navbar span { opacity: 0; transition: opacity .2s; }
+  .navbar.scrolled { background: var(--bar); border-bottom-color: var(--sep); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); }
+  .navbar.scrolled span { opacity: 1; }
+
+  .page { max-width: 680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 48px); }
+  .large { padding: 0 4px 6px; }
+  .large h1 { margin: 0; font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: 0.01em; }
+  .large p { margin-top: 6px; color: var(--label2); font-size: 15px; line-height: 20px; }
+
+  /* grouped sections */
+  .section { margin-top: 28px; }
+  .header { padding: 0 16px 7px; font-size: 13px; line-height: 18px; text-transform: uppercase; color: var(--label2); letter-spacing: 0; }
+  .footer { padding: 7px 16px 0; font-size: 13px; line-height: 18px; color: var(--label2); }
+  .group { background: var(--cell); border-radius: 12px; overflow: hidden; }
+  .row { position: relative; display: flex; align-items: center; gap: 12px; padding: 11px 16px; min-height: 44px; }
+  .row + .row::before { content: ""; position: absolute; top: 0; right: 0; left: var(--inset, 16px); border-top: 0.5px solid var(--sep); }
+  .row .body { flex: 1; min-width: 0; }
+  .row .title { font-size: 17px; line-height: 22px; }
+  .row .sub { font-size: 15px; line-height: 20px; color: var(--label2); margin-top: 2px; }
+  .row .value { color: var(--label2); font-size: 17px; white-space: nowrap; }
+  .caption { font-size: 12px; line-height: 16px; color: var(--label2); text-transform: uppercase; letter-spacing: 0.02em; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13px; letter-spacing: 0; }
+
+  /* app-icon style tiles */
+  .tile { flex: none; width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; background: var(--fill); }
+  .tile.sm { width: 30px; height: 30px; border-radius: 7px; }
+  .tile svg { display: block; }
+
+  /* segmented control */
+  .seg { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--fill); border-radius: 9px; padding: 2px; }
+  .seg button { position: relative; z-index: 1; appearance: none; border: 0; background: none; font: inherit; font-size: 13px; line-height: 18px; font-weight: 500; color: var(--label); padding: 6px 4px; border-radius: 7px; cursor: pointer; }
+  .seg button[aria-selected="true"] { font-weight: 600; }
+  .seg .thumb { position: absolute; z-index: 0; top: 2px; bottom: 2px; left: 2px; width: calc((100% - 4px) / 3); border-radius: 7px; background: var(--thumb); box-shadow: 0 3px 8px rgba(0,0,0,.12), 0 3px 1px rgba(0,0,0,.04); transition: transform .28s cubic-bezier(.3,.7,.2,1); }
+
+  /* stage hero card */
+  .stage-hero { display: flex; gap: 14px; align-items: center; padding: 16px; }
+  .stage-hero .tile { width: 64px; height: 64px; border-radius: 14px; }
+  .stage-hero h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 700; }
+  .chip { display: inline-block; margin-top: 4px; font-size: 13px; line-height: 18px; color: var(--label2); }
+
+  /* product rows */
+  .product { --inset: 80px; align-items: flex-start; padding-top: 12px; padding-bottom: 12px; }
+  .product .brand { font-size: 12px; line-height: 16px; color: var(--label2); text-transform: uppercase; letter-spacing: 0.02em; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .product .name { font-size: 16px; line-height: 21px; font-weight: 600; margin-top: 1px; }
+  .product .sub { font-size: 14px; line-height: 19px; }
+  .badge { color: var(--tint); font-weight: 600; text-transform: none; letter-spacing: 0; font-size: 12px; }
+  .get { flex: none; align-self: center; display: inline-block; min-width: 68px; text-align: center; padding: 6px 14px; border-radius: 999px; background: var(--tint-fill); color: var(--tint); font-size: 15px; font-weight: 700; letter-spacing: 0; }
+  .get:active { opacity: .55; }
+
+  /* routine */
+  .dots { display: flex; gap: 5px; }
+  .dots i { width: 13px; height: 13px; border-radius: 50%; background: var(--fill); display: block; }
+  .dots i.on { background: var(--tint); }
+  .num { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--tint); color: #fff; font-size: 14px; font-weight: 600; display: grid; place-items: center; }
+  .steps .row { --inset: 54px; }
+
+  /* disclosure rows */
+  details { position: relative; }
+  details + details::before { content: ""; position: absolute; top: 0; right: 0; left: 54px; border-top: 0.5px solid var(--sep); }
+  summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 11px 16px; min-height: 44px; }
+  summary::-webkit-details-marker { display: none; }
+  summary:active { background: var(--press); }
+  summary .title { flex: 1; }
+  .chev { width: 8px; height: 14px; color: var(--label3); transition: transform .2s; flex: none; }
+  details[open] .chev { transform: rotate(90deg); }
+  details .more { padding: 0 16px 14px 58px; color: var(--label2); font-size: 15px; line-height: 21px; }
+
+  .warn-title { color: var(--red); font-weight: 600; }
+  .legal { margin-top: 28px; padding: 0 16px; font-size: 12px; line-height: 17px; color: var(--label2); }
+
+  [data-stage-panel][hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { .seg .thumb, .navbar, .navbar span, .chev { transition: none; } }
+</style>
+</head>
+<body>
+<header class="navbar" id="navbar"><span>Melasma Sunscreen</span></header>
+<main class="page">
+  <div class="large" id="large-title">
+    <h1>Melasma Sunscreen Guide</h1>
+    <p>From the reel: why the color of your sunscreen matters for melasma. Tinted picks, how to read the label, and a gentle routine.</p>
+  </div>
+
+  <!-- the science, in two rows -->
+  <section class="section" aria-labelledby="h-why">
+    <div class="header" id="h-why">Why color matters</div>
+    <div class="group">
+      <div class="row" style="--inset: 58px">
+        <span class="tile sm" style="background: #f2efe9"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="#fff" stroke="#b9b2a6" stroke-width="1.5"/></svg></span>
+        <div class="body"><div class="title">Most white sunscreens</div><div class="sub mono">UV ✓ · light ✗</div></div>
+        <span class="value">UV only</span>
+      </div>
+      <div class="row" style="--inset: 58px">
+        <span class="tile sm" style="background: var(--tan-2)"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="#fff" fill-opacity=".55"/></svg></span>
+        <div class="body"><div class="title">Tinted, with iron oxides</div><div class="sub mono">UV ✓ · light ✓</div></div>
+        <span class="value">UV + light</span>
+      </div>
+    </div>
+    <p class="footer">Melasma darkens with light, not only UV, and even cloudy winter light counts. Iron oxides are the pigments that give a sunscreen its tint, and they help block visible light too.</p>
+  </section>
+
+  <!-- stages -->
+  <section class="section" aria-labelledby="h-stage">
+    <div class="header" id="h-stage">Your plan, in three parts</div>
+    <div class="seg" role="tablist" aria-label="Guide part">
+      <span class="thumb" id="seg-thumb"></span>
+      <button role="tab" id="tab-1" aria-controls="stage-1" aria-selected="true" data-stage="1">Tinted SPF</button>
+      <button role="tab" id="tab-2" aria-controls="stage-2" aria-selected="false" data-stage="2">Read the label</button>
+      <button role="tab" id="tab-3" aria-controls="stage-3" aria-selected="false" data-stage="3">Gentle routine</button>
+    </div>
+
+    <!-- PART 1 -->
+    <div id="stage-1" role="tabpanel" aria-labelledby="tab-1" data-stage-panel="1">
+      <div class="section" style="margin-top: 16px">
+        <div class="group">
+          <div class="stage-hero">
+            <span class="tile" style="background: var(--tan-2)"><svg width="40" height="26" viewBox="0 0 40 26" aria-hidden="true"><path d="M2 3 H28 L34 9 V17 L28 23 H2 Z" fill="#fff" fill-opacity=".9"/><rect x="34" y="8" width="5" height="10" rx="1.5" fill="#b98461"/><rect x="8" y="9" width="14" height="8" rx="1.5" fill="#d9a786"/></svg></span>
+            <div><h2>Part 1 · Tinted SPF</h2><span class="chip">Mineral, tinted, SPF 30 or higher</span></div>
+          </div>
+          <div class="row"><div class="body"><div class="caption">This is you if</div><div class="title" style="font-size:16px; margin-top:2px">You have melasma that stays dark, even in winter or on cloudy days.</div></div></div>
+          <div class="row"><div class="body"><div class="caption">How to use</div><div class="title" style="font-size:16px; margin-top:2px">Every morning, about two finger-lengths for face and neck. Reapply every 2 hours when you're outside.</div></div></div>
+        </div>
+      </div>
+      <div class="section" style="margin-top: 22px">
+        <div class="header">Tinted picks · iron oxides on the label</div>
+        <div class="group">
+          <div class="row product">
+            <span class="tile" style="background: var(--tan-1)"><svg width="20" height="34" viewBox="0 0 20 34" aria-hidden="true"><rect x="6" y="0" width="8" height="8" rx="2" fill="#2f5f9e"/><rect x="2" y="8" width="16" height="26" rx="4" fill="#fff" fill-opacity=".92"/><rect x="2" y="19" width="16" height="6" fill="#e2b391"/></svg></span>
+            <div class="body"><div class="brand">La Roche-Posay</div><div class="name">Anthelios Mineral Tinted Ultra-Light Fluid SPF 50</div><div class="sub">A thin, universal-tint mineral fluid with iron oxides. Fragrance-free.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B007U54P36" target="_blank" rel="noopener" aria-label="View La Roche-Posay Anthelios Mineral Tinted SPF 50 on Amazon">View</a>
+          </div>
+          <div class="row product">
+            <span class="tile" style="background: var(--tan-1)"><svg width="20" height="34" viewBox="0 0 20 34" aria-hidden="true"><rect x="5" y="0" width="10" height="8" rx="2" fill="#3a4a5c"/><rect x="2" y="8" width="16" height="26" rx="3" fill="#fff" fill-opacity=".92"/><rect x="5" y="16" width="10" height="2" rx="1" fill="#3a4a5c"/><rect x="2" y="24" width="16" height="4" fill="#d9a786"/></svg></span>
+            <div class="body"><div class="brand">EltaMD</div><div class="name">UV Physical Tinted SPF 41</div><div class="sub">Zinc oxide and titanium dioxide with a light tint for fair to medium skin.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B00C8FVZZY" target="_blank" rel="noopener" aria-label="View EltaMD UV Physical Tinted SPF 41 on Amazon">View</a>
+          </div>
+          <div class="row product">
+            <span class="tile" style="background: var(--tan-2)"><svg width="20" height="34" viewBox="0 0 20 34" aria-hidden="true"><rect x="6" y="0" width="8" height="8" rx="2" fill="#4a7bb7"/><rect x="2" y="8" width="16" height="26" rx="4" fill="#fff" fill-opacity=".92"/><rect x="2" y="20" width="16" height="3" fill="#4a7bb7" fill-opacity=".8"/><rect x="5" y="26" width="10" height="4" rx="1" fill="#c99270"/></svg></span>
+            <div class="body"><div class="brand">CeraVe</div><div class="name">Hydrating Mineral Sunscreen SPF 30, Sheer Tint</div><div class="sub">A moisturizing tinted lotion with ceramides. Comes in light, medium and deep.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B07YLKXV11" target="_blank" rel="noopener" aria-label="View CeraVe Hydrating Mineral Sunscreen Sheer Tint on Amazon">View</a>
+          </div>
+          <div class="row product">
+            <span class="tile" style="background: var(--tan-3)"><svg width="20" height="34" viewBox="0 0 20 34" aria-hidden="true"><rect x="7" y="0" width="6" height="9" rx="2" fill="#2b2b2b"/><rect x="3" y="8" width="14" height="26" rx="4" fill="#fff" fill-opacity=".92"/><rect x="3" y="18" width="14" height="8" fill="#b57a55"/></svg></span>
+            <div class="body"><div class="brand">Neutrogena</div><div class="name">Purescreen+ Mineral Tinted Sunscreen SPF 30</div><div class="sub">A liquid tint with zinc oxide, water resistant. Pack of 2; several shades.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B0GHD8FB6L" target="_blank" rel="noopener" aria-label="View Neutrogena Purescreen+ Mineral Tinted Sunscreen on Amazon">View</a>
+          </div>
+        </div>
+        <p class="footer"><b>Shade tip:</b> a tint that is slightly lighter than your skin is easier to wear daily. Swatch it along the jaw in daylight.</p>
+      </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div id="stage-2" role="tabpanel" aria-labelledby="tab-2" data-stage-panel="2">
+      <div class="section" style="margin-top: 16px">
+        <div class="group">
+          <div class="stage-hero">
+            <span class="tile" style="background: var(--tan-1)"><svg width="30" height="38" viewBox="0 0 30 38" aria-hidden="true"><rect x="3" y="2" width="24" height="34" rx="3" fill="#fff" fill-opacity=".92"/><rect x="7" y="8" width="16" height="2.5" rx="1" fill="#9a8f82"/><rect x="7" y="14" width="12" height="2.5" rx="1" fill="#9a8f82"/><rect x="6" y="19" width="18" height="5" rx="1.5" fill="#d9a786"/><rect x="7" y="28" width="14" height="2.5" rx="1" fill="#9a8f82"/></svg></span>
+            <div><h2>Part 2 · Read the label</h2><span class="chip">Find iron oxides in 10 seconds</span></div>
+          </div>
+          <div class="row"><div class="body"><div class="caption">Where to look</div><div class="title" style="font-size:16px; margin-top:2px">Turn the tube over. Skip the "Active ingredients" box and read the "Inactive ingredients" list, usually near the end.</div></div></div>
+          <div class="row"><div class="body"><div class="caption">What it's called</div><div class="title" style="font-size:16px; margin-top:2px">"Iron oxides", or the color codes below.</div></div></div>
+        </div>
+      </div>
+      <div class="section" style="margin-top: 22px">
+        <div class="header">Names on the label</div>
+        <div class="group">
+          <div class="row" style="--inset: 58px"><span class="tile sm" style="background:#b5482f"></span><div class="body"><div class="title mono" style="font-size:15px">CI 77491</div><div class="sub">Red iron oxide</div></div></div>
+          <div class="row" style="--inset: 58px"><span class="tile sm" style="background:#d4a23a"></span><div class="body"><div class="title mono" style="font-size:15px">CI 77492</div><div class="sub">Yellow iron oxide</div></div></div>
+          <div class="row" style="--inset: 58px"><span class="tile sm" style="background:#3a2d27"></span><div class="body"><div class="title mono" style="font-size:15px">CI 77499</div><div class="sub">Black iron oxide</div></div></div>
+        </div>
+        <p class="footer">"Tinted" on the front is a good sign, but the ingredient list is the proof. A sunscreen can look beige without iron oxides, and a "sheer" one can still have them.</p>
+      </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div id="stage-3" role="tabpanel" aria-labelledby="tab-3" data-stage-panel="3">
+      <div class="section" style="margin-top: 16px">
+        <div class="group">
+          <div class="stage-hero">
+            <span class="tile" style="background: var(--sage)"><svg width="30" height="36" viewBox="0 0 30 36" aria-hidden="true"><path d="M15 2 C8 12 4 17 4 23 a11 11 0 0 0 22 0 C26 17 22 12 15 2 Z" fill="#fff" fill-opacity=".9"/></svg></span>
+            <div><h2>Part 3 · Gentle routine</h2><span class="chip">If it stings, it goes</span></div>
+          </div>
+          <div class="row"><div class="body"><div class="caption">Why gentle</div><div class="title" style="font-size:16px; margin-top:2px">Irritation can make melasma darker. Stinging, burning or redness after a product is a sign to stop it.</div></div></div>
+          <div class="row"><div class="body"><div class="caption">How to use</div><div class="title" style="font-size:16px; margin-top:2px">Keep the routine short: cleanse, a soothing toner, a barrier cream, then tinted SPF in the morning.</div></div></div>
+        </div>
+      </div>
+      <div class="section" style="margin-top: 22px">
+        <div class="header">Products</div>
+        <div class="group">
+          <div class="row product">
+            <span class="tile" style="background: var(--sage)"><svg width="20" height="34" viewBox="0 0 20 34" aria-hidden="true"><rect x="6" y="0" width="8" height="7" rx="2" fill="#2b2b2b"/><rect x="3" y="6" width="14" height="28" rx="3" fill="#fff" fill-opacity=".9"/><rect x="5" y="16" width="10" height="9" rx="1" fill="#2b2b2b" fill-opacity=".75"/></svg></span>
+            <div class="body"><div class="brand">haruharu wonder <span class="badge">Main pick</span></div><div class="name">Black Rice Hyaluronic Toner for Sensitive Skin</div><div class="sub">An alcohol-free, fragrance-free hydrating toner. A calm first layer after cleansing.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B0971YC8W1" target="_blank" rel="noopener" aria-label="View haruharu wonder Black Rice Hyaluronic Toner on Amazon">View</a>
+          </div>
+          <div class="row product">
+            <span class="tile" style="background: var(--sage)"><svg width="30" height="26" viewBox="0 0 30 26" aria-hidden="true"><rect x="2" y="2" width="26" height="8" rx="3" fill="#2b2b2b"/><rect x="3" y="9" width="24" height="15" rx="4" fill="#fff" fill-opacity=".92"/><rect x="9" y="14" width="12" height="5" rx="1" fill="#2b2b2b" fill-opacity=".7"/></svg></span>
+            <div class="body"><div class="brand">haruharu wonder <span class="badge">Main pick</span></div><div class="name">Black Rice 5 Ceramide Barrier Moisturizing Cream</div><div class="sub">Five ceramides to support the skin barrier, morning and night, before your tinted SPF.</div></div>
+            <a class="get" href="https://www.amazon.com/dp/B0DZNFQ6FQ" target="_blank" rel="noopener" aria-label="View haruharu wonder 5 Ceramide Barrier Moisturizing Cream on Amazon">View</a>
+          </div>
+        </div>
+        <p class="footer"><b>Pause these</b> if they sting on your skin: strong scrubs, peel pads, high-strength acids, or anything with a lot of fragrance or alcohol.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- reapply chart -->
+  <section class="section" aria-labelledby="h-routine">
+    <div class="header" id="h-routine">Reapply chart · a day outside</div>
+    <div class="group">
+      <div class="row"><div class="body"><div class="title">Morning</div><div class="sub">Tinted SPF on clean, moisturized skin</div></div><span class="value">8:00</span></div>
+      <div class="row"><div class="body"><div class="title">Late morning</div><div class="sub">Reapply if you're outside</div></div><span class="value">10:00</span></div>
+      <div class="row"><div class="body"><div class="title">Lunch</div><div class="sub">Reapply, also after sweating or wiping</div></div><span class="value">12:00</span></div>
+      <div class="row"><div class="body"><div class="title">Afternoon</div><div class="sub">Every 2 hours while you're outside</div></div><span class="value">14:00 →</span></div>
+    </div>
+    <p class="footer">Indoors all day by a window? Morning SPF still counts, because visible light comes through glass.</p>
+  </section>
+
+  <section class="section" aria-labelledby="h-night">
+    <div class="header" id="h-night">Night</div>
+    <div class="group steps">
+      <div class="row"><span class="num">1</span><div class="body title">Remove sunscreen with a gentle cleanser, no scrubbing.</div></div>
+      <div class="row"><span class="num">2</span><div class="body title">Soothing toner, patted in.</div></div>
+      <div class="row"><span class="num">3</span><div class="body title">Barrier cream.</div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-morning">
+    <div class="header" id="h-morning">Morning</div>
+    <div class="group steps">
+      <div class="row"><span class="num">1</span><div class="body title">Rinse or cleanse gently.</div></div>
+      <div class="row"><span class="num">2</span><div class="body title">Toner and moisturizer.</div></div>
+      <div class="row"><span class="num">3</span><div class="body title">Tinted SPF 30 or higher with iron oxides, every day, even when it's cloudy.</div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-warn">
+    <div class="header" id="h-warn">Good to know</div>
+    <div class="group">
+      <div class="row" style="--inset: 58px"><span class="tile sm" style="background: var(--red)"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 L15 14 H1 Z" fill="#fff"/><rect x="7.2" y="6" width="1.6" height="4.5" rx=".8" fill="#ff3b30"/><circle cx="8" cy="12" r=".9" fill="#ff3b30"/></svg></span><div class="body"><div class="warn-title">See a dermatologist if</div></div></div>
+      <div class="row" style="--inset: 58px"><span class="tile sm" style="background: transparent"></span><div class="body title">A dark patch changes shape, color or size quickly, or itches or bleeds.</div></div>
+      <div class="row" style="--inset: 58px"><span class="tile sm" style="background: transparent"></span><div class="body title">You want treatment beyond sunscreen and gentle care.</div></div>
+      <div class="row" style="--inset: 58px"><span class="tile sm" style="background: transparent"></span><div class="body title">Melasma started in pregnancy: sunscreen comes first, and it often fades after birth. Ask before starting new actives.</div></div>
+    </div>
+  </section>
+
+  <p class="legal">General skincare information, not medical advice. Product details come from brand listings and can change, so check the label.</p>
+</main>
+
+<script>
+  (function () {
+    // segmented control: one stage visible at a time, deep-linkable as #stage-1..3
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.seg [role="tab"]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('[data-stage-panel]'));
+    var thumb = document.getElementById('seg-thumb');
+    function show(n, focus) {
+      n = String(n);
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-stage') === n;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (on && focus) t.focus();
+      });
+      panels.forEach(function (p) { p.hidden = p.getAttribute('data-stage-panel') !== n; });
+      thumb.style.transform = 'translateX(' + (Number(n) - 1) * 100 + '%)';
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () {
+        var n = t.getAttribute('data-stage');
+        show(n);
+        if (history.replaceState) history.replaceState(null, '', '#stage-' + n);
+      });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var j = (i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+        show(tabs[j].getAttribute('data-stage'), true);
+      });
+    });
+    function fromHash() {
+      var m = /^#stage-([123])$/.exec(location.hash);
+      show(m ? m[1] : 1);
+    }
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+
+    // nav bar: small title appears once the large title is scrolled away
+    var bar = document.getElementById('navbar');
+    var large = document.getElementById('large-title');
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        bar.classList.toggle('scrolled', !es[0].isIntersecting);
+      }, { rootMargin: '-44px 0px 0px 0px' }).observe(large);
+    }
+  })();
+</script>
+</body>
+</html>
